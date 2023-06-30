@@ -1,0 +1,17 @@
+name: Test python-env-action
+
+on: [push]
+
+jobs:
+  test-python-env:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/python-env-action@v1
+      with:
+        python-version: 3.11.0
+        requirements: requirements.txt
+        constraints: constraints.txt
+        command: python3 main.py
