@@ -6,7 +6,8 @@ jobs:
   test-python-env:
     strategy:
       matrix:
-        requirements: ['requirements.txt', 'requests']
+        requirements: ['requirements.txt', 'requests numpy']
+        constraints: ['constraints.txt', 'requests==2.31 numpy==1.25']
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +17,5 @@ jobs:
       with:
         python-version: 3.11.0
         requirements: ${{ matrix.requirements }}
-        constraints: constraints.txt
+        constraints: ${{ matrix.constraints }}
         command: python3 main.py
