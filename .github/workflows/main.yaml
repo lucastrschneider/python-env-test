@@ -4,14 +4,17 @@ on: [push]
 
 jobs:
   test-python-env:
+    strategy:
+      matrix:
+        requirements: ['requirements.txt', 'requests']
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-    - uses: lucastrschneider/python-env-action@b3aba29b743808e8bbd40dd3c04ee06337080b89
+    - uses: lucastrschneider/python-env-action@e8fc7b2391889d76cf5b77f4a1fb2e5d7b30b3a4
       with:
         python-version: 3.11.0
-        requirements: requirements.txt
+        requirements: ${{ matrix.requirements }}
         constraints: constraints.txt
         command: python3 main.py
