@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - uses: lucastrschneider/python-env-action@e8fc7b2391889d76cf5b77f4a1fb2e5d7b30b3a4
+    - uses: lucastrschneider/python-env-action@main
       with:
         python-version: 3.11.0
         requirements: ${{ matrix.requirements }}
