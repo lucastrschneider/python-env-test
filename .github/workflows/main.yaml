@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - uses: lucastrschneider/python-env-action@v1
+    - uses: lucastrschneider/python-env-action@b3aba29b743808e8bbd40dd3c04ee06337080b89
       with:
         python-version: 3.11.0
         requirements: requirements.txt
